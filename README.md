@@ -8,11 +8,15 @@
 
 [前置]
 
-你需要库为backtrader,tushare以及pandas。你可以通过pip install进行安装。
+回测框架你可以自行搭建，也可以使用vnpy或backtrader等常用的回测框架
 
-backtrader的文档为：https://www.backtrader.com/docu/
+通过tushare sdk可以帮助你更方便的获取股票数据。你也可以自行下载数据。
 
-tushare api的文档为：https://tushare.pro/document/2?doc_id=27
+https://tushare.pro/document/1?doc_id=7
+
+https://tushare.pro/document/2
+
+https://tushare.pro/document/1?doc_id=131
 
 后端的框架请自行挑选，你可以自由的使用pip中所有的库
 
@@ -22,7 +26,7 @@ tushare api的文档为：https://tushare.pro/document/2?doc_id=27
 你需要首先folk这个代码仓库到你的github,然后完成开发后提交到你的github上面，最后只需要发你的github代码仓库连接给我们就可以
 
 
-1. 回测品类为平安银行，tushare中的代码为'000001.SZ'，回测周期为2023年1月1日到12月31日。本金为1,000,000,每次买入为本金的百分之20.滑点为万分之一。 
+1. 回测品类为平安银行，回测周期为2023年1月1日到12月31日。本金为1,000,000,每次买入为本金的百分之20.滑点为万分之一。 
 
 
 2. 策略为当12日的价格均线穿越26日的价格均线时买入。当价格跌破26均线时卖出。你需要在backtest文件夹下完成策略的回测，并即将为后端提供结果
