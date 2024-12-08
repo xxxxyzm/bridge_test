@@ -87,8 +87,8 @@ $param = @{
     start_date = "2023-01-01"
     end_date = "2023-12-31"
     stock_file = "000001.csv"
-    short_window = 10
-    long_window = 20
+    short_window = 12
+    long_window = 26
     initial_balance = 1000000
     transaction_fee = 0.000
     slippage = 0.0001
@@ -99,8 +99,11 @@ $param = @{
 $body = $param | ConvertTo-Json
 
 # 发送 POST 请求
-$response = Invoke-RestMethod -Uri "http://localhost:5001/post" -Method Post -ContentType "application/json" -Body $body
 
+$response = Invoke-RestMethod -Uri http://127.0.0.1:5001/post `
+>>                                -Method POST `
+>>                                -ContentType "application/json" `
+>>                                -Body $body
 # 输出响应
 $response
 ```
@@ -131,10 +134,11 @@ $response
 在运行上述脚本之前，确保 Flask 应用在另一终端窗口中运行：
 
 ```bash
-python app.py
+python run.py
 ```
 
 ### 4.如果一切顺利，应该返回如下结果
+```
 {
     "final_capital": 996942.6127,
     "total_return": -0.003057387299999944,
@@ -185,3 +189,4 @@ python app.py
         }
     ]
 }
+```
